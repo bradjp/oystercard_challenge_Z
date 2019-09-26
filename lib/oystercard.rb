@@ -38,7 +38,7 @@ class Oystercard
   def add_journey(station)
     if @journey_history.empty? || !@journey_history[-1].value?(:unfinished)
       @journey_history << { entry_station: station, exit_station: :unfinished }
-    elsif @journey_history[-1].value?(:unfinished)
+    else
       @journey_history[-1][:exit_station] = station
 
     end
